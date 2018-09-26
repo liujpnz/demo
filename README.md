@@ -1,34 +1,34 @@
 # Demo
-1.csv
+## 1.csv
 python script to format specified csv file to json file.
 
 
-2.s3
+## 2.s3
 basic operations with aws s3 service using boto3 api, which includes 
   create/delete buckets
   upload/download/delete files
   read file contents
 
-3.dynamodb
+## 3.dynamodb
 basic operations wit aws dynamodb service using boto3 api, which includes
   create/delete tables
   select/insert/update/delete records
   
-4.app
+## 4.app
 building a serverless application using s3, dynamodb, sns, sqs and lambda function to linked those services together.
 before start, create iam role with including 
 steps.
-  a. 1createbucket.py
+  ### a. 1createbucket.py
     create two buckets jason-python-input/jason-python-output with specified regions
   
-  b. 2create_table.py
+  ### b. 2create_table.py
     create three dynamodb tables customers/transactions/totalamount with specified key. 
     For transactions table, we should enable stream with new and old images for lambda funcations.
   
-  c. create sns topic, sqs service.
+  ### c. create sns topic, sqs service.
     subscribe this sns topic with email and sqs endpoints 
   
-  d. 3lambda
+  ### d. 3lambda
     before this step, you need to create iam role: S3-Cloudwatch-DynamoDB for lambda functions to access resource with           cloudwatch,s3, dynamodb and sns
     
     1FormatCSV.py
@@ -45,7 +45,7 @@ steps.
       an alert email will received
       an message queue will push to sqs queue for further process.
       
-  e. use cloudformation template file for auto deployment
+  ### e. use cloudformation template file for auto deployment
      
      Now, using cloudformer.template can deploy a, b, c steps for this application.
      
