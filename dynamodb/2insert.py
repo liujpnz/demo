@@ -1,4 +1,4 @@
-#insert and get record with put_item/get_item method
+#insert and get record into Customers table using put_item/get_item api
 
 from __future__ import print_function # Python 2/3 compatibility
 import boto3

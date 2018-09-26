@@ -18,11 +18,11 @@ class DecimalEncoder(json.JSONEncoder):
 
 dynamodb = boto3.resource('dynamodb')
 
-table = dynamodb.Table('Customers')
+customers = dynamodb.Table('Customers')
 
 print("Customers Records:")
 
-response = table.query(
+response = customers.query(
     KeyConditionExpression=Key('custid').eq('C01')
 )
 

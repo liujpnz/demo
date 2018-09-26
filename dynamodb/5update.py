@@ -1,13 +1,24 @@
 #using json file to update record with update_item method
-
+#when total transaction amount greater than 1000, send message aws SNS service
 
 import boto3
 import json
 import decimal
 
 
-
 dynamodb = boto3.resource('dynamodb')
+
+
+# Connect to SNS
+sns = boto3.client('sns')
+alertTopic = 'TransactionAlert'
+
+#print (sns.list_topics()['Topics'][0]['TopicArn'])
+
+#get sns topic ARN
+snsTopicArn = [t['TopicArn'] for t in sns.list_topics()['Topics'] if t['TopicArn'].endswith(':' + alertTopic)][0]
+
+
 
 totalamount = dynamodb.Table('TotalAmount')
 

@@ -1,6 +1,8 @@
+#convert csv fie to json fromat
+
 import csv, json
 
-
+#define input and output file name
 csvFilePath = "transactions.csv"
 jsonFilePath = "transactions.json"
 

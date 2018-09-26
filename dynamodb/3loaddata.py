@@ -1,4 +1,4 @@
-#batch load json file into dynamodb
+#batch load json file into dynamodb Transactions table
 
 
 from __future__ import print_function # Python 2/3 compatibility
