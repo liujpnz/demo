@@ -1,4 +1,40 @@
 # Demo
+##install python pip aws cli boto3
+
+https://medium.com/@jacobsteeves/aws-lambda-from-the-command-line-7efab7f3ebd9
+# Create a user group 'lambda_group'
+$ aws iam create-group --group-name lambda_group
+# Create a user 'lambda_user'
+$ aws iam create-user --user-name lambda_user
+# Add our user to the group
+$ aws iam add-user-to-group --user-name lambda_user --group-name lambda_group
+# Create a password for this user
+$ aws iam create-login-profile --user-name lambda_user --password My!User1Login8P@ssword
+# Create an CLI access key for this user
+$ aws iam create-access-key --user-name lambda_user
+# Save the Secret and Access Key's some where safe
+
+
+
+
+# aws cli configuration
+
+
+jason@Server:~/python$ aws configure
+AWS Access Key ID [****************IVPA]: 
+AWS Secret Access Key [****************vvoz]: 
+Default region name [ap-southeast-2]: 
+Default output format [None]: 
+
+
+
+# git pull **
+
+
+# 
+
+
+
 ## 1.csv
 python script to format specified csv file to json file.
 
