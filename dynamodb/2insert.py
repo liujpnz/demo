@@ -19,6 +19,8 @@ dynamodb = boto3.resource('dynamodb')
 
 table = dynamodb.Table('Customers')
 
+
+#insert key values
 customerid = "C01"
 name = "Jason"
 address = "24 Milton Rd"
@@ -32,15 +34,9 @@ response = table.put_item(
     }
 )
 
-print("PutItem succeeded:")
+print("PutItem succeed!")
 
 result = table.get_item(Key={'custid':'C01'})
 
-#print(type(result['Item']))
-
-#print(result['Item'])
-
-
 print(result['Item']['custid'], ":", result['Item']['name'], ":", result['Item']['address'])
 
-#print(json.dumps(response, indent=4, cls=DecimalEncoder))

@@ -1,4 +1,4 @@
-#batch load json file into dynamodb Transactions table
+#batch load json file into dynamodb Transactions and Customers table
 
 
 from __future__ import print_function # Python 2/3 compatibility
@@ -8,18 +8,16 @@ import decimal
 
 dynamodb = boto3.resource('dynamodb')
 
+#define dynamodb tables
 transactions = dynamodb.Table('Transactions')
 customers = dynamodb.Table('Customers')
+
 
 with open("transactions.json") as json_file:
     records = json.load(json_file, parse_float = decimal.Decimal)
    
-    #print(type(records))
-    #print(records)
-
     for record in records.values():
         print (record)
-        print(type(record))
 
         txnid = record['txnid']
         

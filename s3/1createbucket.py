@@ -2,9 +2,17 @@
 import boto3
 
 
-upload_filename = 'upload.csv'
+#default input values
 input_bucket_name ='jasons-python-input'
 output_bucket_name ='jasons-python-output'
+
+
+input_bucket_name = input("input bucket name: [" + input_bucket_name + "]") or input_bucket_name
+print (input_bucket_name)
+
+
+input_bucket_name = input("output bucket name: [" + output_bucket_name + "]") or output_bucket_name
+print (output_bucket_name)
 
 # Create an S3 client
 s3 = boto3.client('s3')

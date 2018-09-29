@@ -5,6 +5,7 @@ import boto3
 
 dynamodb = boto3.resource('dynamodb')
 
+#create table: Customers with primary key: custid
 
 customer_table = dynamodb.create_table(
     TableName='Customers',
@@ -29,6 +30,9 @@ customer_table = dynamodb.create_table(
 print("Table status:", customer_table.table_status)
 
 
+
+#create table: Transactions with primary key: txnid
+#enable stream for lambda function
 
 transaction_table = dynamodb.create_table(
     TableName='Transactions',
@@ -57,8 +61,8 @@ transaction_table = dynamodb.create_table(
 print("Table status:", transaction_table.table_status)
 
 
-
-transaction_table = dynamodb.create_table(
+#create table: TotalAmount with primary key: custid
+totalamount_table = dynamodb.create_table(
     TableName='TotalAmount',
     KeySchema=[
         {
@@ -78,4 +82,4 @@ transaction_table = dynamodb.create_table(
     }
 )
 
-print("Table status:", transaction_table.table_status)
+print("Table status:", totalamount_table.table_status)
