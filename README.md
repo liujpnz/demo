@@ -35,6 +35,14 @@ Default output format [None]:
 
 
 
+Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
+
+
 ## 1.csv
 python script to format specified csv file to json file.
 
